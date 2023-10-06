@@ -1,11 +1,10 @@
 const complimentBtn = document.getElementById("complimentButton")
 const fortuneBtn = document.querySelector('#fortuneButton')
-
 const movieInput = document.getElementById('movie-input')
 const ratinginput = document.getElementById('rating-input')
 const myDiv = document.querySelector('#my-div')
 const addToWishForm= document.getElementById('my-form')
-const addToWishBtn = document.getElementById('wishButton')
+// const addToWishBtn = document.getElementById('wishButton')
 const deleteBtn = document.getElementById('delete-button')
 const editBtn = document.getElementById('edit-button')
 

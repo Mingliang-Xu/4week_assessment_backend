@@ -45,13 +45,11 @@ module.exports = {
     },
 
     putWishList: (req, res) => {
-        
+
         let index = movieDatabase.findIndex(element => element.name === req.params.value)
-        movieDatabase[index] = req.params.value;
+        movieDatabase.splice(index, 1, req.body);
         res.status(200).send(movieDatabase);
-        console.log(movieDatabase)
-
-
+        console.log(movieDatabase);
 
     }
 
