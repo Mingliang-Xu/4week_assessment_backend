@@ -1,3 +1,4 @@
+const movieDatabase = [];
 
 module.exports = {
 
@@ -22,6 +23,35 @@ module.exports = {
     let randomFortune = fortunes[Math.floor(Math.random()*fortunes.length)];
 
     res.status(200).send(randomFortune);
+    },
+
+    postWishList: (req, res) =>{
+
+        let{name, rating} = req.body;
+
+        movieDatabase.push({name, rating});
+
+        res.status(200).send(movieDatabase);
+
+        console.log(movieDatabase);
+
+    },
+
+    deleteWishList: (req, res) => {
+        let index = movieDatabase.findIndex(element => element.name === req.params.value)
+        movieDatabase.splice(index, 1);
+        res.status(200).send(movieDatabase);
+        console.log(movieDatabase)
+    },
+
+    putWishList: (req, res) => {
+        
+        let index = movieDatabase.findIndex(element => element.name === req.params.value)
+        movieDatabase[index] = req.params.value;
+        res.status(200).send(movieDatabase);
+        console.log(movieDatabase)
+
+
 
     }
 
