@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Back End Assessment</title>
-  </head>
-  <body class="container">
-    <button id="complimentButton">Get a compliment</button>
 
-    <button id="fortuneButton">Get a fortune</button>
-    <br>
-    <br>
-    <form id="my-form" type="submit">
+<head>
+  <title>Back End Assessment</title>
+</head>
+
+<body class="container">
+  <button id="complimentButton">Get a compliment</button>
+  <button id="fortuneButton">Get a fortune</button>
+  <br>
+  <br>
+  <form id="my-form" type="submit">
     <label>Front-End:</label>
     <br>
     <br>
@@ -18,21 +19,32 @@
     <label for="rating-input">Rating:</label>
     <input type="text" id="rating-input" placeholder="Enter your rating">
     <button id="wishButton" type="submit">Add to Wish List</button>
-    </form>
+  </form>
+  <br>
+
+  <form id="del-form" type="submit">
+    <label for="del-input">Search Name:</label>
+    <input type="text" id="del-input" placeholder="Enter movie to delete">
     <button id="delete-button" type="submit">Delete From Wish list</button>
+  </form>
+  <br>
+  <form id="edit-form" type="submit">
+    <label for="edit-button">Search Name:</label>
+    <input type="text" id="input-id-edit" placeholder="Enter id to edit" />
+    <input type="text" id="edit-input" placeholder="Enter movie to edit" />
+    <input type="text" id="edit-rating" placeholder="Enter new rating" />
+
     <button id="edit-button" type="submit">Edit From Wish list</button>
-
-
-    <br>
-    <br>
-    <div id="my-div"></div>
-
+  </form>
+  <br>
+  <div id="my-div"></div>
 
 
 
 
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="main.js"></script>
-  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
