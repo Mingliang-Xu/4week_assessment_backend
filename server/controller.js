@@ -49,6 +49,7 @@ module.exports = {
                 break
             }
         }
+
         res.status(200).send(movieDatabase);
         console.log(movieDatabase)
     },
@@ -72,6 +73,13 @@ module.exports = {
         res.status(200).send(movieDatabase);
         console.log(movieDatabase)
 
-    }
+    },
+    getWishList: (req, res) => {
+
+        res.status(200).send(movieDatabase);
+
+        console.log(movieDatabase);
+
+    },
 
 }

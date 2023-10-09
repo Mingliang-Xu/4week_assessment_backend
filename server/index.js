@@ -7,14 +7,17 @@ app.use(cors());
 
 app.use(express.json());
 
-const { getCompliment, getFortunes, postWishList, putWishList, deleteFromWishList } = require('./controller')
+const { getCompliment, getFortunes, postWishList, putWishList, deleteFromWishList, getWishList } = require('./controller')
 
 app.get("/api/compliment", getCompliment);
 app.get('/api/fortune', getFortunes);
 
 
-app.post('/api/movie',postWishList);
+app.post('/api/movie/', postWishList);
 app.delete('/api/movie/:id', deleteFromWishList);
 app.put('/api/movie/:id', putWishList);
+app.get('/api/movie/', getWishList);
+
+
 
 app.listen(4000, () => console.log("Server running on 4000"));

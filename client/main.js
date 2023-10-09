@@ -9,6 +9,8 @@ const addToWishForm = document.getElementById('my-form')
 const deleteForm = document.getElementById('del-form')
 const editForm = document.getElementById('edit-form')
 
+const getAllBtn = document.getElementById('get-all')
+
 // const addToWishBtn = document.getElementById('wishButton')
 // const deleteBtn = document.getElementById('delete-button')
 // const editBtn = document.getElementById('edit-button')
@@ -112,9 +114,31 @@ const editWishList = (event) => {
 
 }
 
+const getWishList = (event) => {
+    event.preventDefault();
+
+    axios.get('http://localhost:4000/api/movie/')
+        .then((res) => {
+            console.log(res.data);
+            myDiv.textContent = '';
+            for (let i = 0; i < res.data.length; i++) {
+                let movieP = document.createElement('p')
+                let ratingP = document.createElement('p')
+                movieP.textContent = res.data[i].name;
+                ratingP.textContent = res.data[i].rating;
+                movieP.appendChild(ratingP);
+                myDiv.appendChild(movieP, ratingP);
+            }
+
+        })
+        .catch(() => { })
+
+}
+
 addToWishForm.addEventListener('submit', postWishList);
 deleteForm.addEventListener('submit', deleteWishList);
 editForm.addEventListener('submit', editWishList);
+getAllBtn.addEventListener('submit', getWishList);
 
 
 
