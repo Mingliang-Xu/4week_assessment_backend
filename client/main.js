@@ -115,7 +115,6 @@ const editWishList = (event) => {
 }
 
 const getWishList = (event) => {
-    event.preventDefault();
 
     axios.get('http://localhost:4000/api/movie/')
         .then((res) => {
@@ -138,7 +137,7 @@ const getWishList = (event) => {
 addToWishForm.addEventListener('submit', postWishList);
 deleteForm.addEventListener('submit', deleteWishList);
 editForm.addEventListener('submit', editWishList);
-getAllBtn.addEventListener('submit', getWishList);
+getAllBtn.addEventListener('click', getWishList);
 
 
 
